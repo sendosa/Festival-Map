@@ -1368,5 +1368,195 @@ const EVENTS = [
     lat: 53.5461,
     lng: 9.9661,
     description: "Hamburg's port birthday on May 7th — celebrating since 1189 when Emperor Barbarossa granted the port tax-free access. Opening parade, tugboat ballet, harbor mile, sea of lights. Over a million visitors but the event has genuine civic pride and maritime identity unlike any other German festival."
+  },
+  {
+    name: "Fiera del Riso di Isola della Scala",
+    country: "Italy",
+    region: "Veneto",
+    city: "Isola della Scala",
+    month: 10,
+    lat: 45.2833,
+    lng: 11.0167,
+    description: "Every autumn in the rice capital of Veneto, the most important fair dedicated to Vialone Nano Veronese IGP — the king of Italian risotto rice. Tastings of dozens of risotto variations, show cooking, direct sales from producers. Isola della Scala is a small town in the Veronese plain almost unknown to international tourists."
+  },
+  {
+    name: "Festa del Radicchio di Dosson",
+    country: "Italy",
+    region: "Veneto",
+    city: "Dosson di Casier",
+    month: 1,
+    lat: 45.6333,
+    lng: 12.2833,
+    description: "Late January in a small hamlet near Treviso. The Radicchio Rosso Tardivo di Treviso IGP is one of Italy's most prized vegetables — bitter, crunchy, grown in running spring water. Producers market, dishes from risotto to grilled radicchio, traditional Trevisan atmosphere. Almost exclusively local visitors."
+  },
+  {
+    name: "Sagra del Baccalà di Sandrigo",
+    country: "Italy",
+    region: "Veneto",
+    city: "Sandrigo",
+    month: 9,
+    lat: 45.6833,
+    lng: 11.6167,
+    description: "September festival celebrating baccalà alla vicentina — stockfish slow-cooked for hours in milk with onions and anchovies, served with polenta. The Confraternita del Baccalà alla Vicentina organizes the event. Sandrigo is twinned with the Norwegian island of Røst where the stockfish comes from — Norwegian delegations participate every year."
+  },
+  {
+    name: "Festa della Giuggiola di Arquà Petrarca",
+    country: "Italy",
+    region: "Veneto",
+    city: "Arquà Petrarca",
+    month: 10,
+    lat: 45.2667,
+    lng: 11.7167,
+    description: "First two weekends of October in the medieval village where Petrarch spent his last years — one of the most beautiful villages in Italy. Festival dedicated to the jujube fruit, cultivated here since Roman times. Jujube liqueur (brodo di giuggiole), jams, sweets, medieval market. Extraordinary village in the Euganean Hills."
+  },
+  {
+    name: "Festa del Prosciutto di Montagnana",
+    country: "Italy",
+    region: "Veneto",
+    city: "Montagnana",
+    month: 5,
+    lat: 45.2333,
+    lng: 11.4667,
+    description: "May festival inside one of the best preserved medieval walled towns in Italy — Montagnana's 14th-century walls are 2 kilometers of intact medieval architecture. Festival of the Veneto Berico-Euganeo DOP prosciutto, with direct sales from producers in the central square."
+  },
+  {
+    name: "Sagra del Formaggio di Fossa di Sogliano",
+    country: "Italy",
+    region: "Emilia-Romagna",
+    city: "Sogliano al Rubicone",
+    month: 11,
+    lat: 43.9833,
+    lng: 12.2833,
+    description: "November festival for one of Italy's most extraordinary cheeses: aged in tufa rock pits (fosse) for 90 days in total darkness and anaerobic conditions, which gives it an intense, pungent, unmistakable aroma. The pits are opened in ceremony — the cheese emerges transformed. Borgo on the Romagna-Marche Apennine, almost exclusively local visitors."
+  },
+  {
+    name: "Culatello Jazz di Zibello",
+    country: "Italy",
+    region: "Emilia-Romagna",
+    city: "Zibello",
+    month: 9,
+    lat: 44.9833,
+    lng: 10.1000,
+    description: "September event in the tiny village of Zibello in the Po fog — the birthplace of the Culatello di Zibello DOP, the most prized Italian cured meat made from the finest part of the pork thigh, aged in the cold fog of the Po valley for up to 3 years. Jazz music, tasting of Culatello with fresh butter and gnocco fritto, direct sales from producers."
+  },
+  {
+    name: "Acetaie Aperte di Modena",
+    country: "Italy",
+    region: "Emilia-Romagna",
+    city: "Modena",
+    month: 9,
+    lat: 44.6472,
+    lng: 10.9253,
+    description: "Last Sunday of September: dozens of traditional balsamic vinegar attics (acetaie) open their doors in the province of Modena. Traditional Balsamic Vinegar of Modena DOP is aged for minimum 12 years in a series of barrels of decreasing size — the result is one of the world's most complex condiments. Almost no organized tourism — you visit producer families at home."
+  },
+  {
+    name: "Sagra della Ciliegia di Vignola",
+    country: "Italy",
+    region: "Emilia-Romagna",
+    city: "Vignola",
+    month: 6,
+    lat: 44.4833,
+    lng: 11.0167,
+    description: "June festival in the Modena hills for the Vignola cherry IGP — considered Italy's finest cherry. Market with direct producers, cherry-based dishes from risotto to desserts, show cooking. Vignola also has a stunning 15th-century castle. Almost exclusively Modenese visitors."
+  },
+  {
+    name: "Festa del Lambrusco di Castelvetro",
+    country: "Italy",
+    region: "Emilia-Romagna",
+    city: "Castelvetro di Modena",
+    month: 9,
+    lat: 44.5000,
+    lng: 10.9333,
+    description: "September weekend in the stunning walled village of Castelvetro on the Modena hills dedicated to Lambrusco Grasparossa di Castelvetro DOC — the most structured and tannic of the Lambruscos. Wine tastings, traditional Emilian cuisine, medieval village atmosphere. Almost no international tourism."
+  },
+  {
+    name: "Sagra del Tortellino di Valeriano",
+    country: "Italy",
+    region: "Emilia-Romagna",
+    city: "Valeriano di Rubiera",
+    month: 8,
+    lat: 44.6500,
+    lng: 10.7833,
+    description: "The most authentic tortellino festival in Emilia — organized entirely by Pro Loco volunteers, with sfogline (pasta-making women) rolling pasta by hand in the square. The tortellino in brodo is the only dish. No frills, no concessions to tourism — just the best tortellini in Emilia eaten at outdoor tables."
+  },
+  {
+    name: "Sagra del Panigaccio di Podenzana",
+    country: "Italy",
+    region: "Tuscany",
+    city: "Podenzana",
+    month: 8,
+    lat: 44.2000,
+    lng: 9.9500,
+    description: "August festival in the heart of the Lunigiana for the panigaccio — an unleavened flatbread cooked in terracotta discs, served filled with lard of Colonnata, local cheeses and cured meats. An almost forgotten bread of the mountain shepherds. Lunigiana is one of Tuscany's least touristy areas, on the border with Liguria and Emilia."
+  },
+  {
+    name: "Sagra dell'Acquacotta di Santa Fiora",
+    country: "Italy",
+    region: "Tuscany",
+    city: "Santa Fiora",
+    month: 8,
+    lat: 42.8333,
+    lng: 11.5833,
+    description: "43rd edition. August festival on the slopes of Monte Amiata dedicated to acquacotta — the poorest Maremma soup made with water, vegetables, stale bread and whatever was available. Today enriched but still authentic. Santa Fiora is a borgo of 2,700 inhabitants with a Renaissance hamlet and chestnut woods."
+  },
+  {
+    name: "Sagra del Cinghiale di Capalbio",
+    country: "Italy",
+    region: "Tuscany",
+    city: "Capalbio",
+    month: 9,
+    lat: 42.4500,
+    lng: 11.4167,
+    description: "September festival in the medieval walled village of Capalbio in southern Maremma — one of the most beautiful villages in Italy. Wild boar cooked alla cacciatora, grilled, as polenta sauce. Butteri (Maremma cowboys) on horseback. Extraordinary Maremma landscape. The festival has been running since 1965."
+  },
+  {
+    name: "Festa dell'Uva di Impruneta",
+    country: "Italy",
+    region: "Tuscany",
+    city: "Impruneta",
+    month: 9,
+    lat: 43.6833,
+    lng: 11.2500,
+    description: "Last Sunday of September — the oldest grape festival in Italy, born in 1926. Four neighborhood floats compete in an allegorical parade, followed by wine tastings and local dishes. Impruneta is a village famous for its terracotta and cotto (the red tiles used on Florentine roofs). 30 minutes from Florence, almost no foreign tourists at this specific event."
+  },
+  {
+    name: "Mostra Mercato del Tartufo Bianco di San Miniato",
+    country: "Italy",
+    region: "Tuscany",
+    city: "San Miniato",
+    month: 11,
+    lat: 43.6833,
+    lng: 10.8500,
+    description: "Last three weekends of November in the beautiful medieval town of San Miniato between Florence and Pisa. White truffle market, the most important after Alba, but with a much more intimate and accessible atmosphere. The air of the entire town fills with the unmistakable scent of white truffle. Dozens of local restaurants serve truffle menus."
+  },
+  {
+    name: "Sagra del Tortello alla Lastra del Casentino",
+    country: "Italy",
+    region: "Tuscany",
+    city: "Bibbiena",
+    month: 8,
+    lat: 43.7000,
+    lng: 11.8167,
+    description: "The Casentino valley in the Arezzo Apennines. The tortello alla lastra is a giant potato raviolo cooked on a hot stone slab — a technique unchanged for centuries. Bibbiena's Sagra delle Sagre gathers all the Pro Loco of the valley in the town center: a pass allows you to taste a portion from every stand, walking through the medieval streets."
+  },
+  {
+    name: "Sagra della Porchetta di Monte San Savino",
+    country: "Italy",
+    region: "Tuscany",
+    city: "Monte San Savino",
+    month: 8,
+    lat: 43.3333,
+    lng: 11.7167,
+    description: "Last weekend of August in a magnificent Renaissance town in the Valdarno near Arezzo. The Monte San Savino porchetta — pork stuffed with wild fennel, rosemary and garlic, slow-roasted — is considered one of the best in Tuscany. Medieval village, local market, traditional Tuscan atmosphere."
+  },
+  {
+    name: "Sagra del Fungo Porcino del Casentino",
+    country: "Italy",
+    region: "Tuscany",
+    city: "Poppi",
+    month: 10,
+    lat: 43.7167,
+    lng: 11.7667,
+    description: "October in the Casentino valley below Poppi castle — one of the most beautiful Casentino fortresses. Porcini mushrooms from the Foreste Casentinesi national park, fried in thick golden slices, trifolati, grilled or as pasta sauce. The Casentino chestnut forests produce extraordinary porcini. Almost exclusively Tuscan and Umbrian visitors."
   }
 ];
