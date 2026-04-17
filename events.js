@@ -848,5 +848,135 @@ const EVENTS = [
     lat: 47.7167,
     lng: 23.9333,
     description: "Breb is one of the Maramureș villages where 17th-18th century peasant life is still practically intact — horse-drawn carts, wooden houses, traditional costumes worn in daily life. The festival brings folk music and traditions to an already extraordinary context."
+  },
+  {
+    name: "Walpurgisnacht nell'Harz",
+    country: "Germany",
+    region: "Saxony-Anhalt",
+    city: "Wernigerode",
+    month: 4,
+    lat: 51.8333,
+    lng: 10.7833,
+    description: "Pre-Christian Germanic spring festival on April 30th. Villages of Thale, Schierke and Wernigerode transform as locals wear hand-crafted witch and devil costumes. At nightfall, bonfires are lit across the hillsides and torch processions wind through medieval streets. The most dedicated climb to the Brocken summit — the setting of Goethe's Faust — for the largest gathering around a massive bonfire at midnight. Traditional folk music, Harz cheese, game stews."
+  },
+  {
+    name: "Maibaum Fest",
+    country: "Germany",
+    region: "Bavaria",
+    city: "Various Bavarian villages",
+    month: 5,
+    lat: 47.9988,
+    lng: 11.2729,
+    description: "Every Bavarian village erects its own decorated maypole on May 1st. Groups of young men from rival villages try to steal each other's poles before they are raised — if successful, the losing village must invite them for beer and food to get it back. Traditional Trachten costumes, folk dances, local beer and sausages. One of the most genuinely local Bavarian traditions."
+  },
+  {
+    name: "Volksfest di Schwäbisch Hall",
+    country: "Germany",
+    region: "Baden-Württemberg",
+    city: "Schwäbisch Hall",
+    month: 6,
+    lat: 49.1128,
+    lng: 9.7378,
+    description: "One of Germany's most picturesque folk festivals in a stunning medieval town built around salt springs. The grand staircase of St. Michael's Church becomes a stage for theatrical performances. Local salt production heritage, regional Swabian food, folk music. Far less touristy than Munich's Oktoberfest."
+  },
+  {
+    name: "Five-Petalled Rose Festival",
+    country: "Czech Republic",
+    region: "South Bohemia",
+    city: "Český Krumlov",
+    month: 6,
+    lat: 48.8127,
+    lng: 14.3175,
+    description: "Every June, this fairy-tale town with winding river and Renaissance architecture transforms into a medieval wonderland honoring the noble Rosenberg family. Jousting tournaments, historical reenactments, feasts straight out of the 16th century. Visitors can dress in period costumes. One of the most immersive medieval festivals in Europe."
+  },
+  {
+    name: "Bruciatura di Morena",
+    country: "Czech Republic",
+    region: "Various",
+    city: "Various villages",
+    month: 3,
+    lat: 49.8175,
+    lng: 15.4730,
+    description: "On the last Sunday of Lent, every Czech and Slovak village burns the effigy of Morena, the Slavic goddess of death and winter. Sausages cooked on open flames, wine, beer, party until late. One of the most ancient pagan spring rites still practiced across Central Europe."
+  },
+  {
+    name: "Laulupidu - Estonian Song Festival",
+    country: "Estonia",
+    region: "Harju",
+    city: "Tallinn",
+    month: 7,
+    lat: 59.4370,
+    lng: 24.7536,
+    description: "UNESCO Heritage. Every five years, 30,000-40,000 singers from nearly 1,000 choirs gather at the Song Festival Grounds in Tallinn. A six-hour parade of performers in folk costumes from every Estonian village precedes the main concert before 80,000 spectators. Born in 1869 during Estonian national awakening — singing was the form of non-violent resistance against Soviet occupation. Next edition: check laulupidu.ee for dates."
+  },
+  {
+    name: "Latvian Song and Dance Festival",
+    country: "Latvia",
+    region: "Riga",
+    city: "Riga",
+    month: 7,
+    lat: 56.9460,
+    lng: 24.1059,
+    description: "UNESCO Heritage. Every five years, Latvia's most important cultural event: tens of thousands of singers and dancers in folk costumes parade through Riga from the Cathedral to the Freedom Monument. The festival opens with a sacred music concert and closes with an all-night singalong of Latvian favourites. Born in 1873 as an act of national identity. Next edition: Riga 2028."
+  },
+  {
+    name: "Užgavėnės",
+    country: "Lithuania",
+    region: "Various",
+    city: "Rumšiškės",
+    month: 2,
+    lat: 54.8667,
+    lng: 24.2000,
+    description: "Lithuanian Shrove Tuesday festival with deep pagan roots. Straw effigy of Morė (winter) is burned, pancakes are eaten by the hundreds, battles between Fat Man (summer) and Witch (winter) are reenacted. Most spectacular version at the Rumšiškės open-air ethnographic museum, where the entire village participates in costume."
+  },
+  {
+    name: "Sechseläuten",
+    country: "Switzerland",
+    region: "Zurich",
+    city: "Zurich",
+    month: 4,
+    lat: 47.3769,
+    lng: 8.5417,
+    description: "Every third Monday of April, Zurich's medieval guilds parade through the city in historical costumes on horseback. The celebration culminates in the burning of the Böögg — a snowman stuffed with explosives — whose time to explode predicts the quality of the summer. Ancient tradition of the 36 guilds of Zurich, almost exclusively local."
+  },
+  {
+    name: "Fête des Vignerons",
+    country: "Switzerland",
+    region: "Vaud",
+    city: "Vevey",
+    month: 7,
+    lat: 46.4631,
+    lng: 6.8442,
+    description: "UNESCO Heritage. Held only once per generation (roughly every 20 years) in the wine-growing town of Vevey on Lake Geneva. Extraordinary spectacle involving thousands of local performers celebrating the wine-growing brotherhood. Next edition not yet announced — check confrérie des vignerons for updates. When it happens, it is unmissable."
+  },
+  {
+    name: "Vlissingen Haringfeest",
+    country: "Netherlands",
+    region: "Zeeland",
+    city: "Vlissingen",
+    month: 6,
+    lat: 51.4433,
+    lng: 3.5756,
+    description: "Celebration of the new herring season (Hollandse Nieuwe) in the port of Vlissingen. Fresh raw herring eaten in the traditional Dutch way — held by the tail above the head — with onions. Local fishermen, market stalls, maritime atmosphere. Almost exclusively Dutch visitors."
+  },
+  {
+    name: "Jagiellonian Fair",
+    country: "Poland",
+    region: "Lublin",
+    city: "Lublin",
+    month: 8,
+    lat: 51.2465,
+    lng: 22.5684,
+    description: "One of Poland's largest traditional fairs, evoking the great medieval market of the Jagiellonian era when Lublin was a major trading crossroads between East and West. Folk theatres, traditional Polish food, music, craftsmen from across Central and Eastern Europe. Lublin is one of Poland's most undervisited cities with a stunning Renaissance old town."
+  },
+  {
+    name: "Smigus-Dyngus",
+    country: "Poland",
+    region: "Various",
+    city: "Łowicz",
+    month: 4,
+    lat: 52.1000,
+    lng: 19.9333,
+    description: "Easter Monday tradition where boys drench girls with water — ancient fertility ritual. Most spectacular in the town of Łowicz in Mazovia, famous for its extraordinary folk costumes with geometric stripe patterns. The Easter procession in Łowicz is one of the most colorful in Poland, with hundreds of participants in traditional dress."
   }
 ];
