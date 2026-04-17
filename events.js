@@ -978,5 +978,205 @@ const EVENTS = [
     lat: 52.1000,
     lng: 19.9333,
     description: "Easter Monday tradition where boys drench girls with water — ancient fertility ritual. Most spectacular in the town of Łowicz in Mazovia, famous for its extraordinary folk costumes with geometric stripe patterns. The Easter procession in Łowicz is one of the most colorful in Poland, with hundreds of participants in traditional dress."
+  },
+  {
+    name: "Fête de la Transhumance de l'Aubrac",
+    country: "France",
+    region: "Aveyron/Cantal",
+    city: "Saint-Chély-d'Aubrac",
+    month: 5,
+    lat: 44.6833,
+    lng: 2.9667,
+    description: "Every spring, thousands of Aubrac cattle decorated with flowers and bells make the transhumance to high altitude pastures. The entire plateau celebrates: folk dances with the group Lo Bourreïo d'Olt, cheese soup, farmers opening their farms to visitors. One of the most moving agricultural rituals in France, in a wild volcanic landscape almost without tourism."
+  },
+  {
+    name: "Fête des Fromages de Traditions",
+    country: "France",
+    region: "Auvergne",
+    city: "Pailherols",
+    month: 7,
+    lat: 44.9833,
+    lng: 2.6833,
+    description: "At 1,000 meters altitude between the Cantal and Aubrac mountains, a village cheese festival celebrating the Salers cow and its AOP cheese, plus four other Auvergnat AOP cheeses. Each year a different region of France brings its own cheeses. Terrain festival, almost exclusively local and regional."
+  },
+  {
+    name: "Fête de la Fourme d'Ambert",
+    country: "France",
+    region: "Auvergne",
+    city: "Ambert",
+    month: 5,
+    lat: 45.5500,
+    lng: 3.7333,
+    description: "Festival dedicated to the Fourme d'Ambert, one of France's oldest blue cheeses with AOP status. Small town in the Livradois mountains, producers market, tastings, folk music. Almost no international tourists."
+  },
+  {
+    name: "Fête de la Truffe de Lalbenque",
+    country: "France",
+    region: "Occitania",
+    city: "Lalbenque",
+    month: 3,
+    lat: 44.3333,
+    lng: 1.5500,
+    description: "Every Tuesday from December to March, Lalbenque hosts the largest black truffle market in France. Producers arrive with their baskets, buyers inspect in silence, prices are negotiated. Not a festival but a centuries-old agricultural market. The most authentic truffle experience in France. From Cahors in 20 minutes."
+  },
+  {
+    name: "Fête de l'Ail Rose de Lautrec",
+    country: "France",
+    region: "Occitania",
+    city: "Lautrec",
+    month: 8,
+    lat: 43.7000,
+    lng: 2.1500,
+    description: "First Friday of August in the perfectly preserved medieval village of Lautrec. Festival dedicated to the pink garlic of Lautrec with AOP status — braiding demonstrations, market, traditional cuisine. One of the most beautiful medieval villages in the Tarn, almost exclusively local visitors."
+  },
+  {
+    name: "Fête du Cassoulet de Castelnaudary",
+    country: "France",
+    region: "Occitania",
+    city: "Castelnaudary",
+    month: 8,
+    lat: 43.3167,
+    lng: 1.9500,
+    description: "The world capital of cassoulet. Town of 11,000 on the Canal du Midi. Competition between brotherhoods for the best cassoulet, market, Occitan music. Little international tourism."
+  },
+  {
+    name: "Fête de la Châtaigne de Corrèze",
+    country: "France",
+    region: "Nouvelle-Aquitaine",
+    city: "Corrèze",
+    month: 10,
+    lat: 45.3667,
+    lng: 1.9833,
+    description: "October chestnut festival in the village of Corrèze. Award-winning fair gathering numerous producers. Chestnut and derivative products, demonstrations, local artisans. Small stone villages, deep forests, zero international tourism."
+  },
+  {
+    name: "Foires Grasses de Brive",
+    country: "France",
+    region: "Nouvelle-Aquitaine",
+    city: "Brive-la-Gaillarde",
+    month: 12,
+    lat: 45.1590,
+    lng: 1.5322,
+    description: "From November to February, the covered market of Brive hosts the fat fairs dedicated to foie gras and truffles. The most important truffle and foie gras trading center of the Corrèze. Completely local, extremely authentic, superb market hall."
+  },
+  {
+    name: "Fête du Piment d'Espelette",
+    country: "France",
+    region: "Basque Country",
+    city: "Espelette",
+    month: 10,
+    lat: 43.3500,
+    lng: -1.4500,
+    description: "Last weekend of October in the village of Espelette, whose houses are covered with drying strings of red peppers. The Espelette pepper has AOP status. Pepper braiding competitions, Basque cuisine, traditional costumes. One of the most photogenic and authentic festivals in the Basque Country."
+  },
+  {
+    name: "Brandons d'Auvergne",
+    country: "France",
+    region: "Auvergne",
+    city: "Various Auvergne villages",
+    month: 6,
+    lat: 45.7500,
+    lng: 3.0000,
+    description: "At the summer solstice, villages throughout Auvergne light the brandons — great purifying fires accompanied by singing and dancing. Ancient pagan light festival. Folk crafts, local products, bourrée dancing with cabrette accordion."
+  },
+  {
+    name: "Carnaval de Bielsa",
+    country: "Spain",
+    region: "Aragón",
+    city: "Bielsa",
+    month: 2,
+    lat: 42.6333,
+    lng: 0.2167,
+    description: "One of the most ancient and extraordinary carnivals in the Pyrenees. The trangas — men dressed with goat horns and cowbells symbolizing virility — intimidate the madamas — women in white dresses and colored ribbons evoking purity. Also features the onso (bear) and his tamer. A return to the origins of Pyrenean culture. Village of 600 inhabitants at 1,000 meters altitude."
+  },
+  {
+    name: "Moros y Cristianos de Bocairent",
+    country: "Spain",
+    region: "Valencian Community",
+    city: "Bocairent",
+    month: 2,
+    lat: 38.7833,
+    lng: -0.6000,
+    description: "One of the most authentic Moors and Christians festivals in Spain. Begins with the Nit de les Caixes — residents in traditional costume carrying paper lanterns parade by night to the rhythm of traditional drums. Then main parades, gunpowder battles and conquest of the castle. Nine associations representing Moors and Christians. Medieval village with stunning caves and castle."
+  },
+  {
+    name: "Moros y Cristianos de Villena",
+    country: "Spain",
+    region: "Valencian Community",
+    city: "Villena",
+    month: 9,
+    lat: 38.6333,
+    lng: -0.8667,
+    description: "The most participatory Moors and Christians festival in Spain: over 12,000 festeros parade for over 5 hours. Fourteen troupes with extraordinary period costumes. Includes the unique 17th-century theatrical representation of the Conversion of the Moor to Christianity. Medieval historic center crowned by the spectacular Atalaya castle."
+  },
+  {
+    name: "Moros y Cristianos de Alcoy",
+    country: "Spain",
+    region: "Valencian Community",
+    city: "Alcoy",
+    month: 4,
+    lat: 38.6984,
+    lng: -0.4746,
+    description: "The oldest and most historically faithful Moors and Christians festival. Born in 1276. Three days of parades, embassies and gunpowder. The music of Alcoy — composed specifically for the festival — is one of the most distinctive folk musical traditions in Spain."
+  },
+  {
+    name: "Fiesta de la Vendimia de Rioja Alavesa",
+    country: "Spain",
+    region: "Basque Country",
+    city: "Laguardia",
+    month: 9,
+    lat: 42.5500,
+    lng: -2.5833,
+    description: "Itinerant harvest festival that since 1994 moves to a different village in Rioja Alavesa each year. Traditional grape treading, tasting of the first must, wine tastings, aizkolaris (Basque woodcutting) tournament, pelota matches, folk dances. Almost exclusively local Basque-Riojan visitors. Laguardia is one of the most beautiful medieval walled towns in Spain."
+  },
+  {
+    name: "Noche del Vino de Cómpeta",
+    country: "Spain",
+    region: "Andalusia",
+    city: "Cómpeta",
+    month: 8,
+    lat: 36.8333,
+    lng: -3.9833,
+    description: "Every August 15th in this white village of the Axarquía mountains. Historically jornaleros gathered here to ask the Virgin for a good harvest. Music of verdiales fandangos, traditional Andalusian dances, migas. One of the most authentic interior festivals of the Costa del Sol, far from beach tourism."
+  },
+  {
+    name: "Romería de la Virgen del Rocío",
+    country: "Spain",
+    region: "Andalusia",
+    city: "Almonte",
+    month: 5,
+    lat: 37.1333,
+    lng: -6.4833,
+    description: "The largest pilgrimage in the world: up to one million people on horseback, in decorated carts and on foot converge on the tiny village of El Rocío in the Doñana marshes. Each brotherhood has its own dressed cart and traditional costumes. The moment of the salida of the Virgin at dawn after days of waiting is one of the most intense collective experiences in Europe."
+  },
+  {
+    name: "Fiesta del Ajoblanco de Almáchar",
+    country: "Spain",
+    region: "Andalusia",
+    city: "Almáchar",
+    month: 9,
+    lat: 36.8333,
+    lng: -4.1500,
+    description: "First Saturday of September in a small Axarquía village. Festival dedicated to ajoblanco — cold soup of water, garlic, vinegar, olive oil and salt. One of the most characteristic dishes of inland Malaga. Declared festival of Andalusian tourist interest. Almost exclusively local visitors."
+  },
+  {
+    name: "Carnaval de Cádiz",
+    country: "Spain",
+    region: "Andalusia",
+    city: "Cádiz",
+    month: 2,
+    lat: 36.5271,
+    lng: -6.2886,
+    description: "The most musical and witty carnival in Spain. Chirigotas, comparsas and choirs compete with satirical songs written for the occasion. The entire city becomes a stage for ten days. Considered by many Spaniards the best carnival in the world."
+  },
+  {
+    name: "Fiestas de San Fermín",
+    country: "Spain",
+    region: "Navarra",
+    city: "Pamplona",
+    month: 7,
+    lat: 42.8188,
+    lng: -1.6440,
+    description: "Famous worldwide but genuinely one of the most authentic large festivals in Europe. The running of the bulls is just one act in nine days of total community celebration: open-air concerts, traditional Navarrese dances, communal meals, peñas that organize everything. The city lives it with extraordinary intensity."
   }
 ];
