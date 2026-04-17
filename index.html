@@ -3,26 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Festival Map</title>
+  <title>Festival Map of Europe</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #f8f7f4;
-      --surface: #ffffff;
-      --border: #e4e2dc;
-      --text: #1a1a1a;
-      --muted: #6b6860;
-      --accent: #c0392b;
-      --accent-light: #f9ecea;
+      --bordeaux: #6B1A2A;
+      --bordeaux-dark: #4A1019;
+      --bordeaux-light: #f3e8ea;
+      --cream: #F5EDD8;
+      --orange: #C4622D;
+      --orange-light: #f9ede5;
+      --text-dark: #2C1810;
+      --text-light: #F5EDD8;
+      --bg: #FAF6EE;
+      --card: #FFFFFF;
+      --border: #E8D5B5;
+      --muted: #9a8070;
       --radius: 10px;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: 'Lato', sans-serif;
       background: var(--bg);
-      color: var(--text);
+      color: var(--text-dark);
       min-height: 100dvh;
       display: flex;
       flex-direction: column;
@@ -30,47 +38,68 @@
 
     /* ── Header ── */
     header {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 0 1.25rem;
+      background: var(--bordeaux);
+      padding: 0 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 56px;
+      height: 62px;
       position: sticky;
       top: 0;
       z-index: 100;
+      box-shadow: 0 2px 12px rgba(44,24,16,0.18);
+    }
+
+    .header-title {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .header-title .ornament {
+      color: var(--cream);
+      opacity: 0.6;
+      font-size: 1rem;
+      line-height: 1;
     }
 
     header h1 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--cream);
+      letter-spacing: 0.01em;
+      line-height: 1;
     }
 
     /* ── Toggle ── */
     .toggle {
       display: flex;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
+      align-items: center;
+      gap: 0.15rem;
+      background: rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 3px;
     }
 
     .toggle button {
-      padding: 0.35rem 0.9rem;
-      font-size: 0.82rem;
-      font-weight: 500;
+      padding: 0.3rem 0.85rem;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
       border: none;
       background: transparent;
       cursor: pointer;
-      color: var(--muted);
-      transition: background 0.15s, color 0.15s;
+      color: rgba(245,237,216,0.65);
+      border-radius: 16px;
+      transition: background 0.2s, color 0.2s;
     }
 
     .toggle button.active {
-      background: var(--accent);
-      color: #fff;
+      background: var(--cream);
+      color: var(--bordeaux);
     }
 
     /* ── Main ── */
@@ -80,56 +109,110 @@
     .view.active { display: flex; }
 
     /* ── Calendar view ── */
-    #calendar-view { padding: 1.25rem; gap: 1.25rem; }
+    #calendar-view { padding: 1.5rem; gap: 1.5rem; overflow-y: auto; }
+
+    .calendar-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
 
     .months-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
       gap: 0.75rem;
     }
 
     .month-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 0.85rem 1rem;
-      cursor: pointer;
-      transition: border-color 0.15s, box-shadow 0.15s;
-      user-select: none;
-    }
-
-    .month-card:hover { border-color: var(--accent); box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
-    .month-card.selected { border-color: var(--accent); background: var(--accent-light); }
-
-    .month-card .month-name {
-      font-size: 0.95rem;
-      font-weight: 600;
-    }
-
-    .month-card .event-count {
-      font-size: 0.75rem;
-      color: var(--muted);
-      margin-top: 0.2rem;
-    }
-
-    .month-card .event-count.has-events { color: var(--accent); font-weight: 500; }
-
-    /* ── Event list ── */
-    .event-list-section {
-      background: var(--surface);
+      background: var(--card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       overflow: hidden;
+      cursor: pointer;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+      user-select: none;
+      box-shadow: 0 1px 4px rgba(44,24,16,0.06);
     }
 
-    .event-list-section h2 {
-      font-size: 0.85rem;
+    .month-card:hover {
+      border-color: var(--bordeaux);
+      box-shadow: 0 4px 16px rgba(107,26,42,0.13);
+      transform: translateY(-1px);
+    }
+
+    .month-card.selected {
+      border-color: var(--bordeaux);
+      box-shadow: 0 4px 16px rgba(107,26,42,0.15);
+    }
+
+    .month-card.empty { opacity: 0.5; }
+    .month-card.empty:hover { transform: none; border-color: var(--border); box-shadow: 0 1px 4px rgba(44,24,16,0.06); }
+
+    .month-card-header {
+      background: var(--bordeaux);
+      padding: 0.5rem 0.85rem;
+    }
+
+    .month-card.selected .month-card-header { background: var(--bordeaux-dark); }
+    .month-card.empty .month-card-header { background: #a07070; }
+
+    .month-card .month-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.9rem;
       font-weight: 600;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+    }
+
+    .month-card-body { padding: 0.55rem 0.85rem 0.65rem; }
+
+    .month-card .event-count {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
       color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      padding: 0.85rem 1rem 0.6rem;
+    }
+
+    .month-card .event-count.has-events {
+      color: var(--orange);
+    }
+
+    /* ── Event list ── */
+    .event-list-section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(44,24,16,0.07);
+    }
+
+    .event-list-header {
+      background: var(--cream);
       border-bottom: 1px solid var(--border);
+      padding: 0.75rem 1.1rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .event-list-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--bordeaux);
+    }
+
+    .event-list-header .event-list-count {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--orange);
+      text-transform: uppercase;
     }
 
     .event-list { list-style: none; }
@@ -137,43 +220,48 @@
     .event-item {
       display: flex;
       align-items: flex-start;
-      gap: 0.75rem;
-      padding: 0.85rem 1rem;
+      gap: 0.85rem;
+      padding: 0.85rem 1.1rem;
       border-bottom: 1px solid var(--border);
       cursor: pointer;
-      transition: background 0.1s;
+      transition: background 0.12s;
     }
 
     .event-item:last-child { border-bottom: none; }
-    .event-item:hover { background: var(--bg); }
+    .event-item:hover { background: var(--bordeaux-light); }
 
     .event-item .dot {
-      width: 8px;
-      height: 8px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
-      background: var(--accent);
-      margin-top: 5px;
+      background: var(--bordeaux);
+      margin-top: 6px;
       flex-shrink: 0;
     }
 
     .event-item .info { flex: 1; min-width: 0; }
 
     .event-item .ev-name {
+      font-family: 'Playfair Display', serif;
       font-size: 0.95rem;
       font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.3;
     }
 
     .event-item .ev-location {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--muted);
-      margin-top: 0.1rem;
+      margin-top: 0.15rem;
+      font-weight: 300;
     }
 
     .event-list-empty {
       padding: 2rem 1rem;
       text-align: center;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.88rem;
+      font-style: italic;
     }
 
     /* ── Map view ── */
@@ -185,7 +273,7 @@
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.45);
+      background: rgba(44,24,16,0.5);
       z-index: 500;
       align-items: flex-end;
       justify-content: center;
@@ -199,117 +287,167 @@
     .modal-backdrop.open { display: flex; }
 
     .modal {
-      background: var(--surface);
+      background: var(--cream);
       border-radius: 16px;
       width: 100%;
-      max-width: 480px;
-      max-height: 85dvh;
+      max-width: 500px;
+      max-height: 88dvh;
       overflow-y: auto;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.18);
-      animation: slide-up 0.2s ease;
+      box-shadow: 0 12px 50px rgba(44,24,16,0.25);
+      animation: slide-up 0.25s cubic-bezier(0.34,1.1,0.64,1);
     }
 
     @keyframes slide-up {
-      from { transform: translateY(20px); opacity: 0; }
+      from { transform: translateY(28px); opacity: 0; }
       to   { transform: translateY(0);    opacity: 1; }
     }
 
     .modal-header {
+      background: var(--bordeaux);
+      border-radius: 16px 16px 0 0;
+      padding: 1.1rem 1.25rem 1rem;
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      padding: 1.25rem 1.25rem 0.75rem;
       gap: 1rem;
     }
 
-    .modal-header h3 { font-size: 1.15rem; font-weight: 700; line-height: 1.3; }
+    .modal-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--cream);
+      line-height: 1.3;
+    }
 
     .modal-close {
       width: 28px;
       height: 28px;
       border: none;
-      background: var(--bg);
+      background: rgba(255,255,255,0.15);
       border-radius: 50%;
-      font-size: 1rem;
+      font-size: 0.85rem;
       cursor: pointer;
       flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--muted);
+      color: var(--cream);
       margin-top: 2px;
+      transition: background 0.15s;
     }
+
+    .modal-close:hover { background: rgba(255,255,255,0.25); }
 
     .modal-meta {
       display: flex;
-      gap: 0.5rem;
+      gap: 0.45rem;
       flex-wrap: wrap;
-      padding: 0 1.25rem 0.85rem;
+      padding: 0.9rem 1.25rem 0.6rem;
     }
 
     .modal-tag {
-      font-size: 0.75rem;
-      font-weight: 500;
-      padding: 0.25rem 0.6rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.22rem 0.65rem;
       border-radius: 20px;
-      background: var(--bg);
+      background: #ede0c8;
       border: 1px solid var(--border);
       color: var(--muted);
     }
 
-    .modal-tag.accent { background: var(--accent-light); border-color: #e8b4af; color: var(--accent); }
+    .modal-tag.accent {
+      background: var(--orange-light);
+      border-color: #e0b89a;
+      color: var(--orange);
+    }
 
     .modal-body {
-      padding: 0 1.25rem 1.5rem;
-      font-size: 0.9rem;
-      line-height: 1.65;
-      color: #333;
+      padding: 0.25rem 1.25rem 1.75rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--text-dark);
+      font-style: italic;
     }
 
     /* ── Leaflet popup tweaks ── */
     .leaflet-popup-content-wrapper {
-      border-radius: var(--radius) !important;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15) !important;
+      background: var(--cream) !important;
+      border-radius: 10px !important;
+      box-shadow: 0 6px 24px rgba(44,24,16,0.18) !important;
+      border: 1px solid var(--border) !important;
     }
 
-    .popup-inner { min-width: 140px; }
-    .popup-inner strong { display: block; font-size: 0.9rem; margin-bottom: 0.25rem; }
-    .popup-inner span { font-size: 0.78rem; color: var(--muted); display: block; }
+    .leaflet-popup-tip { background: var(--cream) !important; }
+
+    .popup-inner { min-width: 150px; padding: 2px 0; }
+
+    .popup-inner strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--bordeaux);
+      margin-bottom: 0.3rem;
+      line-height: 1.3;
+    }
+
+    .popup-inner span {
+      font-size: 0.75rem;
+      color: var(--muted);
+      display: block;
+      font-weight: 300;
+      line-height: 1.5;
+    }
+
     .popup-inner a {
       display: inline-block;
-      margin-top: 0.5rem;
-      font-size: 0.78rem;
-      color: var(--accent);
+      margin-top: 0.55rem;
+      font-size: 0.75rem;
+      color: var(--orange);
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
-    .popup-inner a:hover { text-decoration: underline; }
+
+    .popup-inner a:hover { color: var(--bordeaux); }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Festival Map</h1>
+  <div class="header-title">
+    <span class="ornament">✦</span>
+    <h1>Festival Map of Europe</h1>
+  </div>
   <div class="toggle">
-    <button id="btn-calendar" class="active" onclick="showView('calendar')">Calendar</button>
-    <button id="btn-map" onclick="showView('map')">Map</button>
+    <button id="btn-map" class="active" onclick="showView('map')">Map</button>
+    <button id="btn-calendar" onclick="showView('calendar')">Calendar</button>
   </div>
 </header>
 
 <main>
 
-  <!-- Calendar view -->
-  <div id="calendar-view" class="view active">
-    <div class="months-grid" id="months-grid"></div>
-    <div class="event-list-section" id="event-list-section" style="display:none">
-      <h2 id="event-list-title"></h2>
-      <ul class="event-list" id="event-list"></ul>
-    </div>
+  <!-- Map view (default) -->
+  <div id="map-view" class="view active">
+    <div id="map"></div>
   </div>
 
-  <!-- Map view -->
-  <div id="map-view" class="view">
-    <div id="map"></div>
+  <!-- Calendar view -->
+  <div id="calendar-view" class="view">
+    <p class="calendar-heading">Browse by month</p>
+    <div class="months-grid" id="months-grid"></div>
+    <div class="event-list-section" id="event-list-section" style="display:none">
+      <div class="event-list-header">
+        <h2 id="event-list-title"></h2>
+        <span class="event-list-count" id="event-list-count"></span>
+      </div>
+      <ul class="event-list" id="event-list"></ul>
+    </div>
   </div>
 
 </main>
@@ -2068,7 +2206,6 @@
   ];
 
   let selectedMonth = null;
-  let mapInitialized = false;
 
   // ── View toggle ──────────────────────────────────────────────
   function showView(view) {
@@ -2076,8 +2213,6 @@
     document.getElementById('map-view').classList.toggle('active', view === 'map');
     document.getElementById('btn-calendar').classList.toggle('active', view === 'calendar');
     document.getElementById('btn-map').classList.toggle('active', view === 'map');
-
-    if (view === 'map' && !mapInitialized) initMap();
   }
 
   // ── Calendar ─────────────────────────────────────────────────
@@ -2087,11 +2222,15 @@
       const month = i + 1;
       const count = EVENTS.filter(e => e.month === month).length;
       const card = document.createElement('div');
-      card.className = 'month-card';
+      card.className = 'month-card' + (count === 0 ? ' empty' : '');
       card.dataset.month = month;
       card.innerHTML = `
-        <div class="month-name">${name}</div>
-        <div class="event-count ${count ? 'has-events' : ''}">${count ? count + ' event' + (count > 1 ? 's' : '') : 'No events'}</div>
+        <div class="month-card-header">
+          <div class="month-name">${name}</div>
+        </div>
+        <div class="month-card-body">
+          <div class="event-count ${count ? 'has-events' : ''}">${count ? count + ' festival' + (count > 1 ? 's' : '') : 'None listed'}</div>
+        </div>
       `;
       card.addEventListener('click', () => selectMonth(month));
       grid.appendChild(card);
@@ -2115,14 +2254,16 @@
   function renderEventList(month) {
     const section = document.getElementById('event-list-section');
     const title = document.getElementById('event-list-title');
+    const countEl = document.getElementById('event-list-count');
     const list = document.getElementById('event-list');
 
     const events = EVENTS.filter(e => e.month === month);
     title.textContent = MONTH_NAMES[month - 1];
+    countEl.textContent = events.length ? events.length + ' festival' + (events.length > 1 ? 's' : '') : '';
     list.innerHTML = '';
 
     if (!events.length) {
-      list.innerHTML = '<li class="event-list-empty">No events this month.</li>';
+      list.innerHTML = '<li class="event-list-empty">No festivals listed for this month.</li>';
     } else {
       events.forEach(ev => {
         const li = document.createElement('li');
@@ -2145,21 +2286,30 @@
 
   // ── Map ───────────────────────────────────────────────────────
   function initMap() {
-    mapInitialized = true;
-    const map = L.map('map', { center: [50, 15], zoom: 4 });
+    const map = L.map('map', { center: [50, 13], zoom: 4, zoomControl: true });
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; <a href="https://carto.com/">CARTO</a> &copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>',
       subdomains: 'abcd',
       maxZoom: 19
     }).addTo(map);
 
+    const markerHtml = `
+      <div style="
+        width:11px;height:11px;
+        background:#6B1A2A;
+        border:2px solid #F5EDD8;
+        border-radius:50%;
+        box-shadow:0 1px 5px rgba(107,26,42,0.45);
+        transition:transform 0.15s,box-shadow 0.15s;
+      "></div>`;
+
     const icon = L.divIcon({
       className: '',
-      html: `<div style="width:12px;height:12px;background:#c0392b;border:2px solid #fff;border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,0.3)"></div>`,
-      iconSize: [12, 12],
-      iconAnchor: [6, 6],
-      popupAnchor: [0, -8]
+      html: markerHtml,
+      iconSize: [11, 11],
+      iconAnchor: [5, 5],
+      popupAnchor: [0, -9]
     });
 
     EVENTS.forEach(ev => {
@@ -2172,7 +2322,7 @@
           <a href="#" onclick="openModalById('${encodeURIComponent(ev.name)}');return false;">Read more →</a>
         </div>
       `;
-      marker.bindPopup(popupHtml, { maxWidth: 220 });
+      marker.bindPopup(popupHtml, { maxWidth: 230, className: '' });
     });
   }
 
@@ -2190,9 +2340,9 @@
     const meta = document.getElementById('modal-meta');
     meta.innerHTML = `
       <span class="modal-tag accent">${MONTH_NAMES[ev.month - 1]}</span>
-      <span class="modal-tag">${ev.city}</span>
+      <span class="modal-tag accent">${ev.country}</span>
       <span class="modal-tag">${ev.region}</span>
-      <span class="modal-tag">${ev.country}</span>
+      <span class="modal-tag">${ev.city}</span>
     `;
 
     document.getElementById('modal-backdrop').classList.add('open');
@@ -2200,7 +2350,6 @@
   }
 
   function closeModal(e) {
-    if (e && e.target !== document.getElementById('modal-backdrop') && e.type !== 'click') return;
     if (e && e.currentTarget === document.getElementById('modal-backdrop') && e.target !== e.currentTarget) return;
     document.getElementById('modal-backdrop').classList.remove('open');
     document.body.style.overflow = '';
@@ -2210,6 +2359,7 @@
 
   // ── Init ──────────────────────────────────────────────────────
   buildCalendar();
+  initMap();
 </script>
 </body>
 </html>
