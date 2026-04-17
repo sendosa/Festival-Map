@@ -708,5 +708,145 @@ const EVENTS = [
     lat: 35.7333,
     lng: 27.1500,
     description: "The island of Karpathos is famous for its loyalty to traditional customs. The village of Olympos is a medieval mountain village where women still wear the traditional costume in daily life. On August 15th, panigyria in all villages with dances that continue until dawn."
+  },
+  {
+    name: "Sagra del Sale",
+    country: "Italy",
+    region: "Sicily",
+    city: "Petralia Soprana",
+    month: 8,
+    lat: 37.8000,
+    lng: 14.0833,
+    description: "Village perched on the Madonie mountains with panoramic views of Etna and the sea. Celebrates the historic local rock salt mine. One of the highest villages in Sicily, almost no international tourism."
+  },
+  {
+    name: "Sagra del Pane",
+    country: "Italy",
+    region: "Sicily",
+    city: "Monterosso Almo",
+    month: 8,
+    lat: 37.0833,
+    lng: 14.7667,
+    description: "Baroque Ibleo village. Bread baked in stone ovens according to recipes handed down for generations, live demonstrations. Baroque architecture little known to tourists."
+  },
+  {
+    name: "Fiera di Sant'Evasio",
+    country: "Italy",
+    region: "Piedmont",
+    city: "Casale Monferrato",
+    month: 5,
+    lat: 45.1333,
+    lng: 8.4500,
+    description: "One of the oldest fairs in Piedmont. Magnificent Monferrato town with the largest synagogue in Europe outside major cities. Monferrato wines, truffle, local products."
+  },
+  {
+    name: "Fiera di San Luca",
+    country: "Italy",
+    region: "Emilia-Romagna",
+    city: "Piacenza",
+    month: 10,
+    lat: 45.0526,
+    lng: 9.6929,
+    description: "One of the oldest agricultural fairs of the Po Valley. Livestock, Piacenza cheeses, cured meats, anachronistic and beautiful peasant atmosphere."
+  },
+  {
+    name: "Almabtrieb",
+    country: "Austria",
+    region: "Tyrol",
+    city: "Various alpine villages",
+    month: 9,
+    lat: 47.2692,
+    lng: 11.4041,
+    description: "Descent of cattle from summer alpine pastures to the valley, with the animals decorated with flowers and large bells. Each mountain village has its own. In the smaller villages of Eastern Tyrol and Styrian Alps there is still very little international tourism."
+  },
+  {
+    name: "Kirtag",
+    country: "Austria",
+    region: "Styria",
+    city: "Various Styrian villages",
+    month: 9,
+    lat: 47.3500,
+    lng: 14.5000,
+    description: "The Austrian equivalent of the Greek panigiri: patron saint festival with Blasmusik brass band, Heuriger new wine served directly from the cellar, Landler dances. Every village has its own. Most authentic in the Upper Styria (Murtal, Ennstal)."
+  },
+  {
+    name: "Carnaval de Binche",
+    country: "Belgium",
+    region: "Hainaut",
+    city: "Binche",
+    month: 2,
+    lat: 50.4086,
+    lng: 4.1664,
+    description: "UNESCO Heritage. Small Belgian town with one of the most extraordinary carnivals in the world. The Gilles — masked figures in elaborate costumes with ostrich feather hats — parade through the streets throwing blood oranges at the crowd. Deeply local, deeply strange, deeply authentic."
+  },
+  {
+    name: "Skördefestival di Öland",
+    country: "Sweden",
+    region: "Öland",
+    city: "Öland",
+    month: 9,
+    lat: 56.7500,
+    lng: 16.6333,
+    description: "One of the most beloved harvest festivals in Sweden: lantern-lit streets, scarecrow competitions, open farmhouses with homemade pies and storytelling by firelight. Artisan markets with wool, pottery and seasonal jams. Öland is reachable from Kalmar by bridge."
+  },
+  {
+    name: "Juhannus rurale",
+    country: "Finland",
+    region: "Lakeland",
+    city: "Savonlinna",
+    month: 6,
+    lat: 61.8667,
+    lng: 28.8833,
+    description: "Finns flee the cities to lakeside countryside cottages. The most authentic celebrations are in the Lakeland where every community lights its own bonfire on the water, swims in the lake at midnight with the sun still visible, and drinks lakka (cloudberry liqueur). Almost no foreign tourists participate in rural Juhannus."
+  },
+  {
+    name: "Sankthans",
+    country: "Norway",
+    region: "Various coastal villages",
+    city: "Various",
+    month: 6,
+    lat: 60.4720,
+    lng: 8.4689,
+    description: "Midsummer bonfires on the fjords. Every village lights its own bonfire on the shore. Lamb, beer, music. Unique atmosphere with the sun that never sets."
+  },
+  {
+    name: "Festa del Vino di Anogia",
+    country: "Greece",
+    region: "Crete",
+    city: "Anogia",
+    month: 8,
+    lat: 35.2833,
+    lng: 24.8833,
+    description: "Anogia is the proudest and most musically gifted village in Crete — it has produced the greatest lyra players on the island. Rough red wine served in ceramic cups, Cretan dances in the most ancient style on the island, dawn on the Aegean Sea."
+  },
+  {
+    name: "Détva Folk Festival",
+    country: "Slovakia",
+    region: "Central Slovakia",
+    city: "Detva",
+    month: 7,
+    lat: 48.5583,
+    lng: 19.4167,
+    description: "One of the largest folk festivals in Slovakia. Detva is a stronghold of tradition: craftsmen carving shepherd's axes, fujara music (UNESCO long mountain flute), regional costumes still worn for ceremonies."
+  },
+  {
+    name: "Fărșang",
+    country: "Romania",
+    region: "Banat",
+    city: "Dudeștii Vechi",
+    month: 2,
+    lat: 46.0167,
+    lng: 20.5000,
+    description: "300-year-old tradition marking the beginning of Lent: traditional sausage making, local wine and pastry tastings. Banat village with strong Austro-Hungarian cultural influence."
+  },
+  {
+    name: "Fest in Vale",
+    country: "Romania",
+    region: "Maramureș",
+    city: "Breb",
+    month: 8,
+    lat: 47.7167,
+    lng: 23.9333,
+    description: "Breb is one of the Maramureș villages where 17th-18th century peasant life is still practically intact — horse-drawn carts, wooden houses, traditional costumes worn in daily life. The festival brings folk music and traditions to an already extraordinary context."
   }
 ];
