@@ -350,6 +350,7 @@
       color: var(--cream);
       line-height: 1.25;
       letter-spacing: 0.01em;
+      text-align: center;
     }
 
     .hero-body {
@@ -357,8 +358,9 @@
       font-size: 0.78rem;
       font-weight: 300;
       color: rgba(245,237,216,0.82);
-      line-height: 1.55;
+      line-height: 1.65;
       max-width: 560px;
+      text-align: center;
     }
 
     .hero-stats {
@@ -368,12 +370,13 @@
       letter-spacing: 0.05em;
       color: rgba(245,237,216,0.72);
       margin-top: 0.25rem;
+      text-align: center;
     }
 
     @media (min-width: 769px) {
-      .hero { flex-direction: row; align-items: center; justify-content: space-between; gap: 1.5rem; }
-      .hero-left { flex: 1; min-width: 0; }
-      .hero-stats { margin-top: 0; flex-shrink: 0; text-align: right; }
+      .hero { flex-direction: column; align-items: center; gap: 0.35rem; }
+      .hero-left { width: 100%; }
+      .hero-stats { margin-top: 0.1rem; text-align: center; }
     }
 
     /* ── Modal ── */
@@ -551,7 +554,7 @@
     <div class="hero">
       <div class="hero-left">
         <div class="hero-tagline">Discover Europe's most authentic local festivals</div>
-        <div class="hero-body">Not Oktoberfest. Not tourist traps. The real thing — village feasts, ancient rituals, and genuine local celebrations across Europe and the Mediterranean.</div>
+        <div class="hero-body">Not Oktoberfest. Not tourist traps.<br>The real thing: village feasts, ancient rituals, and genuine local celebrations<br>across Europe and the Mediterranean.</div>
       </div>
       <div class="hero-stats">30+ regions &nbsp;·&nbsp; 200+ authentic festivals &nbsp;·&nbsp; Every month of the year</div>
     </div>
@@ -2501,7 +2504,7 @@
     en: {
       appTitle: "Festival Map of Europe",
       heroTagline: "Discover Europe's most authentic local festivals",
-      heroBody: "Not Oktoberfest. Not tourist traps. The real thing — village feasts, ancient rituals, and genuine local celebrations across Europe and the Mediterranean.",
+      heroBody: "Not Oktoberfest. Not tourist traps.<br>The real thing: village feasts, ancient rituals, and genuine local celebrations<br>across Europe and the Mediterranean.",
       heroStats: "30+ regions &nbsp;·&nbsp; 200+ authentic festivals &nbsp;·&nbsp; Every month of the year",
       btnMap: "Map",
       btnCalendar: "Calendar",
@@ -2515,7 +2518,7 @@
     it: {
       appTitle: "Mappa dei Festival d'Europa",
       heroTagline: "Scopri i festival locali più autentici d'Europa",
-      heroBody: "Non l'Oktoberfest. Non le trappole per turisti. La vera cosa — feste di paese, riti antichi e celebrazioni locali autentiche in tutta Europa e nel Mediterraneo.",
+      heroBody: "Non l'Oktoberfest. Non le trappole per turisti.<br>Ma le migliori feste di paese, riti antichi e celebrazioni locali autentiche<br>in tutta Europa e nel Mediterraneo.",
       heroStats: "30+ regioni &nbsp;·&nbsp; 200+ festival autentici &nbsp;·&nbsp; Ogni mese dell'anno",
       btnMap: "Mappa",
       btnCalendar: "Calendario",
@@ -2546,7 +2549,7 @@
     document.title = t.appTitle;
     document.getElementById('app-title').textContent = t.appTitle;
     document.querySelector('.hero-tagline').textContent = t.heroTagline;
-    document.querySelector('.hero-body').textContent = t.heroBody;
+    document.querySelector('.hero-body').innerHTML = t.heroBody;
     document.querySelector('.hero-stats').innerHTML = t.heroStats;
     document.getElementById('btn-map').textContent = t.btnMap;
     document.getElementById('btn-calendar').textContent = t.btnCalendar;
