@@ -2370,6 +2370,10 @@
   }
 
   // ── Calendar ─────────────────────────────────────────────────
+  function evDesc(ev) {
+    return (currentLang === 'it' && ev.description_it) ? ev.description_it : ev.description;
+  }
+
   function firstSentence(text) {
     const m = text.match(/^[^.!?]+[.!?]/);
     return m ? m[0] : text.slice(0, 120) + (text.length > 120 ? '…' : '');
@@ -2446,7 +2450,7 @@
       card.innerHTML = `
         <div class="ev-card-name">${ev.name}</div>
         <div class="ev-card-meta">${lbl.country}${ev.country} · ${lbl.region}${ev.region}</div>
-        <div class="ev-card-snippet">${firstSentence(ev.description)}</div>
+        <div class="ev-card-snippet">${firstSentence(evDesc(ev))}</div>
       `;
       card.addEventListener('click', e => { e.stopPropagation(); openModal(ev); });
       container.appendChild(card);
@@ -2518,7 +2522,7 @@
     const t = tr();
     const lbl = t.modalLabels;
     document.getElementById('modal-name').textContent = ev.name;
-    document.getElementById('modal-desc').textContent = ev.description;
+    document.getElementById('modal-desc').textContent = evDesc(ev);
     const meta = document.getElementById('modal-meta');
     meta.innerHTML = `
       <span class="modal-tag accent">${lbl.period}${t.monthNames[ev.month - 1]}</span>
