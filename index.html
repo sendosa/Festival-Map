@@ -303,6 +303,7 @@
 
     .hero-body-mobile { display: none; }
     .hero-body-desktop { display: block; }
+    .stats-last { white-space: nowrap; }
 
     @media (max-width: 768px) {
       /* ── Header ── */
@@ -321,7 +322,7 @@
       .hero-body-desktop { display: none; }
       .hero-body-mobile { display: block; }
       .hero-stats {
-        font-size: 0.67rem;
+        font-size: clamp(0.56rem, 2.3vw, 0.67rem);
         margin-top: 0.2rem;
         line-height: 1.6;
         text-align: center;
@@ -567,7 +568,7 @@
         <div class="hero-body hero-body-desktop">Not Oktoberfest. Not tourist traps.<br>The real thing: village feasts, ancient rituals, and genuine local celebrations<br>across Europe and the Mediterranean.</div>
         <div class="hero-body hero-body-mobile">Not Oktoberfest. Not tourist traps.<br>The real thing: village feasts, ancient rituals,<br>and genuine local celebrations<br>across Europe and the Mediterranean.</div>
       </div>
-      <div class="hero-stats">30+ regions &nbsp;·&nbsp; 200+ authentic festivals &nbsp;·&nbsp; Every month of the year</div>
+      <div class="hero-stats">30+ regions &nbsp;·&nbsp; 200+ authentic festivals &nbsp;·&nbsp; <span class="stats-last">Every month of the year</span></div>
     </div>
     <div id="map"></div>
   </div>
@@ -2517,7 +2518,7 @@
       heroTagline: "Discover Europe's most authentic local festivals",
       heroBody: "Not Oktoberfest. Not tourist traps.<br>The real thing: village feasts, ancient rituals, and genuine local celebrations<br>across Europe and the Mediterranean.",
       heroBodyMobile: "Not Oktoberfest. Not tourist traps.<br>The real thing: village feasts, ancient rituals,<br>and genuine local celebrations<br>across Europe and the Mediterranean.",
-      heroStats: "30+ regions &nbsp;·&nbsp; 200+ authentic festivals &nbsp;·&nbsp; Every month of the year",
+      heroStats: "30+ regions &nbsp;·&nbsp; 200+ authentic festivals &nbsp;·&nbsp; <span class=\"stats-last\">Every month of the year</span>",
       btnMap: "Map",
       btnCalendar: "Calendar",
       calHeading: "Browse by month",
@@ -2532,7 +2533,7 @@
       heroTagline: "Scopri i festival locali più autentici d'Europa",
       heroBody: "Non l'Oktoberfest. Non le trappole per turisti.<br>Ma le migliori feste di paese, riti antichi e celebrazioni locali autentiche<br>in tutta Europa e nel Mediterraneo.",
       heroBodyMobile: "Non l'Oktoberfest. Non le trappole per turisti.<br>Ma le migliori feste di paese, riti antichi<br>e celebrazioni locali autentiche<br>in tutta Europa e nel Mediterraneo.",
-      heroStats: "30+ regioni &nbsp;·&nbsp; 200+ festival autentici &nbsp;·&nbsp; Ogni mese dell'anno",
+      heroStats: "30+ regioni &nbsp;·&nbsp; 200+ festival autentici &nbsp;·&nbsp; <span class=\"stats-last\">Ogni mese dell'anno</span>",
       btnMap: "Mappa",
       btnCalendar: "Calendario",
       calHeading: "Sfoglia per mese",
